@@ -9,8 +9,8 @@ namespace cw11.Configurations
     {
         public void Configure(EntityTypeBuilder<PrescriptionMedicament> builder)
         {
-            builder.HasKey(m => m.IdMedicament);
-
+            builder.HasKey(m => new {m.IdMedicament, m.IdPrescription});
+            
             builder.Property(pm => pm.Dose)
                 .IsRequired();
             

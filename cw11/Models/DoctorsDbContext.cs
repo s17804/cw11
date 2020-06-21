@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using cw11.Configurations;
+using Microsoft.EntityFrameworkCore;
 
 namespace cw11.Models
 {
@@ -22,14 +23,12 @@ namespace cw11.Models
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<Doctor>()
-                .HasKey(d => d.IdDoctor);
-
-            modelBuilder.Entity<Doctor>()
-                .Property(d => d.FirstName)
-                .HasMaxLength(100)
-                .IsRequired();
-
+            modelBuilder.ApplyConfiguration(new DoctorConfiguration());
+            modelBuilder.ApplyConfiguration(new PatientConfiguration());
+            modelBuilder.ApplyConfiguration(new MedicamentConfiguration());
+            modelBuilder.ApplyConfiguration(new PrescriptionConfiguration());
+            modelBuilder.ApplyConfiguration(new PrescriptionMedicamentConfiguration());
+            
         }
     }
 }

@@ -7,7 +7,6 @@ namespace cw11.Models
 {
     public class Prescription
     {
-        
         public int IdPrescription { get; set; }
         
         public DateTime Date { get; set; }

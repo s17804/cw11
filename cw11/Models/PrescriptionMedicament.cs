@@ -6,7 +6,6 @@ namespace cw11.Models
    [Table("Prescription_Medicament")]
     public class PrescriptionMedicament
     {
-        
         public int Dose { get; set; }
         
         public string Details { get; set; }

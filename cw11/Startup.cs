@@ -33,7 +33,7 @@ namespace cw11
             {
                 options.UseSqlServer(Configuration["ConnectionString"]);
             });
-            services.AddSingleton<IDoctorService, DoctorDbService>();
+            services.AddScoped<IDoctorService, DoctorDbService>();
             services.AddControllers();
         }
 
